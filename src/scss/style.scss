@@ -1,0 +1,10 @@
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/base";
+@import "./blocks/header.scss";
+
+.container{
+    max-width: 1590px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
