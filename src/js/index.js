@@ -81,3 +81,29 @@ burger.addEventListener("click", function() {
         document.querySelector(".sub-menu-catalog__list_open").classList.remove("sub-menu-catalog__list_open")
     } 
 })
+
+const swiper = new Swiper('.swiper', {
+    speed: 400,
+    spaceBetween: 100,
+    pagination: {
+        el: '.controls-head__dotts',
+        type: 'bullets',
+      },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    on: {
+        init: function(swiper) {
+            const allSlides = document.querySelector(".fraction-control__all");
+
+            allSlides.textContent = swiper.slides.length < 10 ? `0${swiper.slides.length}` : swiper.slides.length;
+            console.log(swiper)
+        },
+        slideChange: function(swiper) {
+            const currentSlide = document.querySelector(".fraction-control__current");
+
+            currentSlide.textContent = swiper.activeIndex < 10 ? `0${swiper.activeIndex + 1}` : swiper.activeIndex + 1;
+        }
+    }
+});
