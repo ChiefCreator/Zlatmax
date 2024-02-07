@@ -1,3 +1,4 @@
+// Главная секция 
 .head{
     overflow: hidden;
     background-color: $bg-dark;
@@ -149,6 +150,91 @@
         gap: 30px;
         &__item{
             max-width: 280px;
+        }
+    }
+}
+
+// Секция с каталогом ножей
+.catalog-knife{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    gap: 20px;
+    padding: 100px 0 70px 0;
+    @media (max-width:450px) {
+        grid-template-columns: 1fr;
+    }
+}
+.knife-card{
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    position: relative;
+    padding: 20px;
+    min-height: 290px;
+    &__body{
+        position: relative;
+        z-index: 2;
+    }
+    &__link-title{
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 600;
+        position: relative;
+        cursor: pointer;
+        &::after{
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background-color: $bg-main;
+            transition: width .3s ease;
+            margin: 15px 0;
+        }
+        &:hover::after{
+            width: 100%;
+        }
+    }
+    &__list{
+        padding: 0;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+        &::before{
+            content: "";
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: $bg-main;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+    }
+    &__img{
+        position: absolute;
+        height: 100%;
+        top:0;
+        right: 0;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        overflow: hidden;
+        img{
+            max-width: 100%;
+            height: 100%;
+            transform: translateY(8%);
+        }
+        @media (max-width:450px) {
+            position: static;
+            align-items: end;
+            justify-content: center;
+            width: auto;
+            height: auto;
+            img{
+                height: auto;
+            }
         }
     }
 }
