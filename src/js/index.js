@@ -126,7 +126,7 @@ const swiperCatalog = new Swiper('.products__slider', {
         300: {
             slidesPerView: 1,
             spaceBetween: 20,
-          },
+        },
         680: {
           slidesPerView: 2,
           spaceBetween: 20
@@ -139,5 +139,35 @@ const swiperCatalog = new Swiper('.products__slider', {
             slidesPerView: 4,
             spaceBetween: 30
         },
-      }
+    }
+});
+const swiperNovelty = new Swiper('.new__slider', {
+    speed: 400,
+    spaceBetween: 30,
+    slidesPerView: 3,
+    loop:true,
+    watchOverflow:true,
+    pagination: {
+        el: '.new__dotts',
+        type: 'bullets',
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    breakpoints: {
+        300: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        1110: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1500: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+    }
 });

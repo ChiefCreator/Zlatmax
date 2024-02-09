@@ -1,0 +1,98 @@
+.new{
+    background-image: url("./../../img/bg-new-section.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(0, 0, 0);
+    padding: 50px 0;
+    position: relative;
+    &::before{
+        position: absolute;
+        top:-4px;
+        right: 0;
+        content: "";
+        z-index: 1;
+        width: 60%;
+        height: 44px;
+        background-color: white;
+    }
+    &__wrapper{
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: clamp(0.625rem, -7.793rem + 12.24vw, 4.375rem);
+        position: relative;
+        z-index: 2;
+        @media (max-width:780px) {
+            grid-template-columns: 12fr;
+        }
+    }
+    &__title{
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__text{
+        color: rgba(255,255,255.7);
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 60px;
+    }
+    &__link{
+
+    }
+    &__slider{
+        width: 100%;
+        padding: 40px 15px 60px 15px;
+        @media (max-width:1110px) {
+            max-width: 375px;
+        }
+    }
+    &__slide{
+        width: 100%;
+    }
+    &__dotts{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        .swiper-pagination-bullet{
+            border-radius: 0;
+            height: 2px;
+            flex: 0 0 20px;
+            background-color: white;
+            position: relative;
+            transition: flex .3s ease;
+            &::before{
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: $bg-main;
+                border-radius: 50%;
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                left: 0px;
+                opacity: 0;
+            }
+            &-active{
+                flex: 0 0 35px;
+                background-color: $bg-main !important;
+                &::before{
+                    transition: left 3s linear;
+                    opacity: 1;
+                    left: calc(35px - 5px);
+                }
+            }
+        }
+    }
+}
+.link-arrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    color:$color-main;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
