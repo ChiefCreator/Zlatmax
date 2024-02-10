@@ -315,6 +315,7 @@
 // Секции с карточками фонарей
 .product-cards{
     padding: 50px 0;
+    margin-bottom: 70px;
     &__wrapper{
         display: grid;
         grid-template-columns: 6fr 6fr;
