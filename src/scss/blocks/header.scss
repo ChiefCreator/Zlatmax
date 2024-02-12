@@ -471,6 +471,9 @@
         color: $color-light;
         text-decoration: none;
         cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     &__all{
         font-weight: 600;
